@@ -1,5 +1,8 @@
 package Teste.base;
+
 import Teste.base.Jogador;//utilizando dados da classe jogador
+
+import java.util.ArrayList;
 import java.util.List;//listas de jogadores
 
 public class Jogo {
@@ -8,14 +11,28 @@ public class Jogo {
     private List<Jogador> jogador;
 
 
-    public Jogo(String gamenumber,int allkills,List<Jogador> jogador){
+    @Override
+    public String toString() {
+        return gamenumber +": {"+ "\n"+
+                "     total_kills:" + allkills + "\n"+
+                "     players: " + jogador + ""+"\n"+
+                "     kills: {" + "\n" +
+                "        }"+"\n"+
+                "}\n";
+    }
+
+    public Jogo(){
         this.allkills=0;
-        this.gamenumber=gamenumber;
-        this.jogador=jogador;
+        this.gamenumber="";
+        this.jogador=null;
     }
 
     public List<Jogador> getJogador() {
         return jogador;
+    }
+
+    public void setJogador(List<Jogador> jogador) {
+        this.jogador = jogador;
     }
 
     public int getAllkills() {
@@ -33,4 +50,6 @@ public class Jogo {
     public void setGamenumber(String gamenumber) {
         this.gamenumber = gamenumber;
     }
+
+
 }

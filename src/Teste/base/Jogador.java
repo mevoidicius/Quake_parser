@@ -7,10 +7,10 @@ public class Jogador {
 
     @Override
     public String toString(){
-        return nome;
+        return this.nome+": "+kills;
     }
 
-    public Jogador(String nome,String id,int kills){
+    public Jogador(String nome,String id){
         this.nome=nome;
         this.id=id;
         this.kills=0;
