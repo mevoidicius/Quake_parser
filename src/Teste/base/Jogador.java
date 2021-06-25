@@ -5,6 +5,11 @@ public class Jogador {
     private String id;
     private int kills;
 
+    @Override
+    public String toString(){
+        return nome;
+    }
+
     public Jogador(String nome,String id,int kills){
         this.nome=nome;
         this.id=id;
@@ -30,10 +35,6 @@ public class Jogador {
         return kills;
     }
 
-    @Override
-    public String toString(){
-        return "id: "+this.id+"nome: "+this.nome;
-    }
 
 
 
