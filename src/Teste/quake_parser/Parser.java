@@ -15,28 +15,31 @@ public class Parser {
         try{
             File arqLog =new File("C:\\Users\\rosta\\IdeaProjects\\Quake_parser\\src\\Teste\\games.log");
             Scanner arq =new Scanner(arqLog);
-            int countJogos =1;
+            int countJogos =0;
             List<Jogo> ljogos =new ArrayList<Jogo>();
 
-            while(arq.hasNext()){                                                                                        //lê o arquivo todo até achar uma das condições de tratamento.
-                String line= arq.nextLine();                                                                             //variável responsável por ir guardar as variáveis encontradas na linha do .log
-
+            while(arq.hasNext()){
+                String line= arq.nextLine();
                 if(line.contains("InitGame")){
-                    ljogos.add(Builder.criar(countJogos));                                                               //cria uma lista e muda o atributo do jogo cada vez que encontra um jogo novo
-                    System.out.println(ljogos);
+                  // System.out.println(countJogos);
+                    ljogos.add(Builder.criar(countJogos));
+                   // System.out.println(ljogos);
                 }
-                else if (line.contains("ClientUserinfoChanged:")){                                                       // se entrar aqui significa que o nome/id do usuário foi alterado e precisa ser inserido novamente na list
+                else if (line.contains("ClientUserinfoChanged:")){
+                    Jogo reyna= ljogos.get(countJogos);
 
                 }
                 else if(line.contains("Kill:")){
-
+                    Jogo game = ljogos.get(countJogos);
+                    game.setAllkills(game.getAllkills()+1);
                 }
                 else if(line.contains("ShutdownGame")){
                     countJogos++;
                 }
 
             }
-            arq.close();                                                                                                 //para de ler o arquivo
+            arq.close();
+            Builder.imprimirJogos(escolha,ljogos);
         }catch (FileNotFoundException exception){
             System.out.println("arquivo inválido.");
         };
