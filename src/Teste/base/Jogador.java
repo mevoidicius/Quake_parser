@@ -10,6 +10,12 @@ public class Jogador {
         return this.nome+": "+kills;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        final Jogador other = (Jogador) obj;
+        return (this.id.equals(other.id));
+    }
+
     public Jogador(String nome,String id){
         this.nome=nome;
         this.id=id;

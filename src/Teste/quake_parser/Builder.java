@@ -11,8 +11,8 @@ public class Builder {
     public static Jogo criar(int escolha){
         Jogo game =new Jogo();
 
-        game.setGamenumber("game-"+(escolha+1));
-        game.setJogador(new ArrayList<>());
+        game.setGamenumber(""+(escolha+1));
+        game.setJogador(new ArrayList<Jogador>());
 
         return game;
     }
@@ -24,15 +24,4 @@ public class Builder {
             System.out.println(jogos.get(numgame-1)); //printar o jogo selecionado
         }
     }
-
-    /*public Jogo arrumarJogador(String linha){
-
-        String[] arrumarlinha  = linha.split(":")
-
-
-        return
-    }*\
-
-     */
-
 }

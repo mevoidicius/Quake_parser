@@ -8,14 +8,14 @@ import java.util.List;//listas de jogadores
 public class Jogo {
     private String gamenumber;
     private int allkills;
-    private List<Jogador> jogador;
+    private ArrayList<Jogador> jogador;
 
 
     @Override
     public String toString() {
-        return gamenumber +": {"+ "\n"+
+        return "game-"+ gamenumber +": {"+ "\n"+
                 "     total_kills:" + allkills + "\n"+
-                "     players: " + jogador + ""+"\n"+
+                "     players: " + jogador +"\n"+
                 "     kills: {" + "\n" +
                 "        }"+"\n"+
                 "}\n";
@@ -27,11 +27,11 @@ public class Jogo {
         this.jogador=null;
     }
 
-    public List<Jogador> getJogador() {
+    public ArrayList<Jogador> getJogador() {
         return jogador;
     }
 
-    public void setJogador(List<Jogador> jogador) {
+    public void setJogador(ArrayList<Jogador> jogador) {
         this.jogador = jogador;
     }
 
@@ -50,6 +50,4 @@ public class Jogo {
     public void setGamenumber(String gamenumber) {
         this.gamenumber = gamenumber;
     }
-
-
 }
