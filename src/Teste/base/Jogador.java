@@ -7,7 +7,7 @@ public class Jogador {
 
     @Override
     public String toString(){
-        return this.nome+": "+kills;
+        return this.nome+" :"+kills;
     }
 
     @Override

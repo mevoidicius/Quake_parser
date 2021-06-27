@@ -1,9 +1,6 @@
 package Teste.base;
 
-import Teste.base.Jogador;//utilizando dados da classe jogador
-
 import java.util.ArrayList;
-import java.util.List;//listas de jogadores
 
 public class Jogo {
     private String gamenumber;
@@ -15,10 +12,7 @@ public class Jogo {
     public String toString() {
         return "game-"+ gamenumber +": {"+ "\n"+
                 "     total_kills:" + allkills + "\n"+
-                "     players: " + jogador +"\n"+
-                "     kills: {" + "\n" +
-                "        }"+"\n"+
-                "}\n";
+                "     players and kills : " + jogador +"\n";
     }
 
     public Jogo(){
@@ -50,4 +44,6 @@ public class Jogo {
     public void setGamenumber(String gamenumber) {
         this.gamenumber = gamenumber;
     }
+
+
 }

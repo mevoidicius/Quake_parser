@@ -10,7 +10,6 @@ public class Builder {
 
     public static Jogo criar(int escolha){
         Jogo game =new Jogo();
-
         game.setGamenumber(""+(escolha+1));
         game.setJogador(new ArrayList<Jogador>());
 
@@ -21,7 +20,7 @@ public class Builder {
         if (numgame == 0) {
             System.out.println(jogos);//printar todos os jogos do game.log
         }else{
-            System.out.println(jogos.get(numgame-1)); //printar o jogo selecionado
+            System.out.print(jogos.get(numgame-1)); //printar o jogo selecionado
         }
     }
 }
