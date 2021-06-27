@@ -20,7 +20,6 @@ public class Parser {
             Tratamento tratamento =new Tratamento();
             while(arq.hasNext()){
                 String line= arq.nextLine();
-
                 // Se achar a palavra InitGame,significa que foi iniciado um jogo novo.
                 if(line.contains("InitGame")){
                     ljogos.add(Builder.criar(countJogos));
@@ -37,13 +36,11 @@ public class Parser {
                         client.getJogador().add(j);
                     }
                     else {
-
                         //como a lista não está vazia é realizado uma busca para saber se o jogador está ou não na lista , se não estiver ele é adicionado.
                         if(tratamento.buscarjogador(client,j)){
                             client.getJogador().add(j);
                         }
                         else{
-
                             //se houver um jogador com o id repetido, faz-se uma busca para saber para qual novo nick ele trocou.
                             Jogador jogadorrepet =tratamento.buscaridjogador(client,j);
                             if(jogadorrepet!=null){
@@ -83,7 +80,6 @@ public class Parser {
             }
             arq.close();
             Builder.imprimirJogos(escolha,ljogos);
-            //ljogos.get((escolha-1)).printakills();
         }
         catch (FileNotFoundException exception){
             System.out.println("arquivo inválido.");
