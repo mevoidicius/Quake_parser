@@ -3,10 +3,31 @@ package Teste.quake_parser;
 import Teste.base.Jogador;
 import Teste.base.Jogo;
 
-import java.util.List;
-
 public class Tratamento {
 
+
+    private String[] tratarKill (String line){
+        String[] breakline= line.split(":");
+        String[] reverseline= breakline[2].split(" ");
+        return reverseline;
+    }
+    public String[] tratarkill(String line){
+        return tratarKill(line);
+    }
+
+
+    private Jogador buscarIdK (Jogo jogo, String id){
+        //int idPlayer = Integer.parseInt(id);
+        for(Jogador ez :jogo.getJogador()){
+            if(ez.getId().equals(id)){
+                return ez;
+            }
+        }
+        return null;
+    }
+    public Jogador buscaridkill(Jogo jogo, String id){
+        return buscarIdK (jogo,id);
+    }
 
 
 
@@ -22,7 +43,7 @@ public class Tratamento {
         return buscarJogador(jogo,jogador);
     }
 
-    private Jogador buscarJId (Jogo jogo, Jogador jogador){
+    private Jogador buscarIdJ (Jogo jogo, Jogador jogador){
         for(Jogador zed :jogo.getJogador()){
             if(zed.equals(jogador)){
                 return zed;
@@ -31,7 +52,7 @@ public class Tratamento {
         return null;
     }
     public Jogador buscaridjogador(Jogo jogo, Jogador jogador){
-        return buscarJId(jogo,jogador);
+        return buscarIdJ(jogo,jogador);
     }
 
     private String tratarNome(String line){
